@@ -15,6 +15,27 @@ local function render_image()
   end
 end
 
+-- Function to show a custom recording message
+local function show_macro_recording_start()
+  vim.api.nvim_echo({ { "Recording macro in @" .. vim.fn.reg_recording(), "WarningMsg" } }, false, {})
+end
+
+-- Function to show a custom recording end message
+local function show_macro_recording_stop()
+  vim.api.nvim_echo({ { "Stopped recording macro", "WarningMsg" } }, false, {})
+end
+
+-- Autocommands to handle macro recording messages
+vim.api.nvim_create_autocmd("RecordingEnter", {
+  pattern = "*",
+  callback = show_macro_recording_start,
+})
+
+vim.api.nvim_create_autocmd("RecordingLeave", {
+  pattern = "*",
+  callback = show_macro_recording_stop,
+})
+
 -- Autocommand to trigger the image rendering function when opening an image file
 vim.api.nvim_create_autocmd("BufReadPost", {
   pattern = "*.png,*.jpg,*.jpeg,*.gif",

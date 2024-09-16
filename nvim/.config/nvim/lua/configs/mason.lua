@@ -12,6 +12,12 @@ local options = {
     "clang-format",
     "codelldb",
     "stylua",
+    "intelephense",
+    "phpactor",
+    "php-cs-fixer",
+    "easy-coding-standard",
+    "bash-language-server",
+    "shfmt",
   },
 
   PATH = "skip",

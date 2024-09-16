@@ -8,21 +8,42 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { "prettierd" },
+        typescript = { "prettierd" },
         html = { "prettierd" },
         css = { "prettierd" },
         cpp = { "clang_format" },
         c = { "clang_format" },
+        typescriptreact = { "prettierd" },
+        javascriptreact = { "prettierd" },
+        php = { "php-cs-fixer" },
+        json = { "prettierd" },
+        bash = { "shfmt" },
+      },
+      formatters = {
+        ["php-cs-fixer"] = {
+          command = "php-cs-fixer",
+          args = {
+            "fix",
+            "--rules=@PSR12",
+            "$FILENAME",
+          },
+          stdin = false,
+        },
       },
       format_on_save = {
-        -- These options will be passed to conform.format()
         timeout_ms = 400,
         lsp_fallback = true,
       },
     },
-    config = function(_, opts)
-      require("conform").setup(opts)
-    end,
+  },
+
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle", -- Only loads when the command is called
+    keys = {
+      { "<C-p>", "<cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
+    },
   },
 
   {
@@ -340,7 +361,7 @@ return {
     end,
     keys = {
       {
-        "<leader>A",
+        "<C-a>",
         function()
           require("harpoon"):list():append()
         end,

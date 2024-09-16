@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATE_FILE="$HOME/.config/hypr/scripts/waybar-state"
+STATE_FILE="$HOME/temp/waybarState"
 
 if pgrep -x "waybar" > /dev/null; then
     killall waybar
