@@ -1,22 +1,13 @@
 require "nvchad.options"
 
--- add yours here!
-
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
-
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
--------------------------------------- globals -----------------------------------------
-g.toggle_theme_icon = "   "
-
--------------------------------------- options ------------------------------------------
 o.laststatus = 3
 o.showmode = false
 
-o.clipboard = "unnamedplus"
+-- o.clipboard = "unnamedplus"
 o.cursorline = true
 o.cursorlineopt = "number"
 
@@ -30,7 +21,7 @@ o.softtabstop = 2
 opt.fillchars = { eob = " " }
 o.ignorecase = true
 o.smartcase = true
-o.mouse = "a"
+o.mouse = ""
 
 -- Numbers
 o.number = true
