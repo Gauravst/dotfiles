@@ -1,4 +1,4 @@
-require "nvchad.options"
+-- require "nvchad.options"
 
 local opt = vim.opt
 local o = vim.o
@@ -7,7 +7,7 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
--- o.clipboard = "unnamedplus"
+o.clipboard = "unnamed"
 o.cursorline = true
 o.cursorlineopt = "number"
 

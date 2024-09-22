@@ -354,10 +354,15 @@ return {
         local harpoon = require "harpoon"
         toggle_telescope_with_harpoon(harpoon:list())
       end, { desc = "Open harpoon window" })
-      -- vim.keymap.set("n", "1", function()
-      --   local harpoon = require "harpoon"
-      --   harpoon:list():select(1)
-      -- end, { desc = "harpoon to file 1" })
+
+      vim.keymap.set("n", "<C-S-P>", function()
+        local harpoon = require "harpoon"
+        harpoon:list():prev()
+      end)
+      vim.keymap.set("n", "<C-h-n>", function()
+        local harpoon = require "harpoon"
+        harpoon:list():next()
+      end)
     end,
     keys = {
       {
@@ -398,33 +403,4 @@ return {
       },
     },
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("nvchad.configs.lspconfig").defaults()
-  --     require "configs.lspconfig"
-  --   end,
-  -- },
-  --
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
 }
