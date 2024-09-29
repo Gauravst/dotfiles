@@ -355,11 +355,11 @@ return {
         toggle_telescope_with_harpoon(harpoon:list())
       end, { desc = "Open harpoon window" })
 
-      vim.keymap.set("n", "<C-S-P>", function()
+      vim.keymap.set("n", "<leader>i", function()
         local harpoon = require "harpoon"
         harpoon:list():prev()
       end)
-      vim.keymap.set("n", "<C-h-n>", function()
+      vim.keymap.set("n", "<leader>o", function()
         local harpoon = require "harpoon"
         harpoon:list():next()
       end)

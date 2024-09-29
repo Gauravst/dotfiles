@@ -18,8 +18,8 @@ alias pr="~/.config/scripts/pr.sh"
 alias cht="~/.config/scripts/cht.sh"
 
 # YouTube video downloader
-ytp() {
-    yt-dlp --playlist-start $1 --playlist-end $2  -o "$HOME/Desktop/gst/md/ytdlp/%(title)s.%(ext)s"  $3
-}
+# ytp() {
+#     yt-dlp --playlist-start $1 --playlist-end $2  -o "$HOME/Desktop/gst/md/ytdlp/%(title)s.%(ext)s"  $3
+# }
 alias yt='yt-dlp -o "$HOME/Desktop/gst/md/ytdlp/%(title)s.%(ext)s"'
 
