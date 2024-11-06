@@ -56,9 +56,6 @@ PROMPT='[%n@%m %1~]%# '
 TIMEFORMAT='%H:%M'
 eval "$(starship init zsh)"
 
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -67,9 +64,7 @@ HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
+# setopt hist_ignore_all_dups setopt hist_save_no_dups setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Completion styling
@@ -87,3 +82,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 # eval "$(zoxide init --cmd cd zsh)"
 eval "$(zoxide init zsh)"
+
+# Set GEM_HOME to your user's gem directory
+export GEM_HOME="$HOME/.gem/ruby/3.3.0"
+
+# Add the gem binary path to your PATH (only need to add it once)
+export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"
+export PATH="$PATH:$HOME/Android/platform-tools"
+export PATH=/home/gaurav/.local/bin:$PATH
