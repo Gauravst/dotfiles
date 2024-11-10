@@ -19,6 +19,7 @@ return {
         php = { "php-cs-fixer" },
         json = { "prettierd" },
         bash = { "shfmt" },
+        markdown = { "prettierd" },
       },
       formatters = {
         ["php-cs-fixer"] = {
@@ -40,7 +41,7 @@ return {
 
   {
     "mbbill/undotree",
-    cmd = "UndotreeToggle", -- Only loads when the command is called
+    cmd = "UndotreeToggle",
     keys = {
       { "<C-p>", "<cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
     },
@@ -321,6 +322,37 @@ return {
           },
         },
       }
+    end,
+  },
+
+  -- {
+  --   "MeanderingProgrammer/markdown.nvim",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   ft = "markdown", -- Only load for markdown files
+  --   config = function()
+  --     require("render-markdown").setup()
+  --   end,
+  -- },
+
+  {
+    "vimwiki/vimwiki",
+    event = "VimEnter", -- Trigger on Vim startup
+    keys = {
+      "<leader>ww", -- Open Vimwiki index
+      "<leader>wt", -- Create a new wiki tab
+    },
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = "/home/gaurav/Desktop/gst/vimwiki/", -- Your Vimwiki directory
+          syntax = "markdown", -- Use markdown syntax
+          ext = ".md", -- Set extension to .md (Markdown)
+        },
+      }
+      vim.g.vimwiki_ext2syntax = {} -- You can leave this empty for no custom mapping
     end,
   },
 

@@ -20,10 +20,11 @@ local options = {
     telescope = { style = "borderless" }, -- borderless / bordered
 
     statusline = {
+      enabled = true,
       theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
       -- default/round/block/arrow separators work only for default statusline theme
       -- round and block will work for minimal theme only
-      separator_style = "block",
+      separator_style = "default",
       order = nil,
       modules = nil,
     },
@@ -40,15 +41,18 @@ local options = {
       load_on_startup = false,
 
       header = {
-        "           ▄ ▄                   ",
-        "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-        "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-        "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-        "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-        "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-        "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-        "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-        "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+        "                            ",
+        "     ▄▄         ▄ ▄▄▄▄▄▄▄   ",
+        "   ▄▀███▄     ▄██ █████▀    ",
+        "   ██▄▀███▄   ███           ",
+        "   ███  ▀███▄ ███           ",
+        "   ███    ▀██ ███           ",
+        "   ███      ▀ ███           ",
+        "   ▀██ █████▄▀█▀▄██████▄    ",
+        "     ▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀   ",
+        "                            ",
+        "     Powered By  eovim    ",
+        "                            ",
       },
 
       buttons = {
@@ -83,6 +87,13 @@ local options = {
   },
 
   mason = { cmd = true, pkgs = {} },
+
+  colorify = {
+    enabled = true,
+    mode = "virtual", -- fg, bg, virtual
+    virt_text = "󱓻 ",
+    highlight = { hex = true, lspvars = true },
+  },
 }
 
 return vim.tbl_deep_extend("force", options, require "chadrc")
