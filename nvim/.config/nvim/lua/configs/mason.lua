@@ -18,6 +18,10 @@ local options = {
     "easy-coding-standard",
     "bash-language-server",
     "shfmt",
+    "black",
+    "pyright",
+    "golangci-lint",
+    "goimports",
   },
 
   PATH = "skip",

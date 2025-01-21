@@ -90,3 +90,5 @@ export GEM_HOME="$HOME/.gem/ruby/3.3.0"
 export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"
 export PATH="$PATH:$HOME/Android/platform-tools"
 export PATH=/home/gaurav/.local/bin:$PATH
+
+GOPATH=$HOME/go  PATH=$PATH:/usr/local/go/bin:$GOPATH/bin

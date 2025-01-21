@@ -5,6 +5,8 @@
 hyprctl dispatch workspace 1
 kitty --detach tmux new-session -A -s main
 
+sleep 2
+
 # Open Chrome in workspace 2
 hyprctl dispatch workspace 2
 google-chrome-stable --new-window &

@@ -11,6 +11,8 @@ local options = {
     "tsx",
     "html",
     "prisma",
+    "python",
+    "go",
   },
 
   highlight = {

@@ -20,6 +20,8 @@ return {
         json = { "prettierd" },
         bash = { "shfmt" },
         markdown = { "prettierd" },
+        python = { "prettierd" },
+        go = { "goimports" },
       },
       formatters = {
         ["php-cs-fixer"] = {
@@ -33,7 +35,7 @@ return {
         },
       },
       format_on_save = {
-        timeout_ms = 400,
+        timeout_ms = 600,
         lsp_fallback = true,
       },
     },
@@ -52,6 +54,15 @@ return {
     ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html" },
     config = function()
       require("nvim-ts-autotag").setup()
+    end,
+  },
+
+  {
+    "github/copilot.vim",
+    config = function()
+      -- Optional: Configuration settings for Copilot
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
     end,
   },
 
@@ -337,24 +348,24 @@ return {
   --   end,
   -- },
 
-  {
-    "vimwiki/vimwiki",
-    event = "VimEnter", -- Trigger on Vim startup
-    keys = {
-      "<leader>ww", -- Open Vimwiki index
-      "<leader>wt", -- Create a new wiki tab
-    },
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = "/home/gaurav/Desktop/gst/vimwiki/", -- Your Vimwiki directory
-          syntax = "markdown", -- Use markdown syntax
-          ext = ".md", -- Set extension to .md (Markdown)
-        },
-      }
-      vim.g.vimwiki_ext2syntax = {} -- You can leave this empty for no custom mapping
-    end,
-  },
+  -- {
+  --   "vimwiki/vimwiki",
+  --   event = "VimEnter", -- Trigger on Vim startup
+  --   keys = {
+  --     "<leader>ww", -- Open Vimwiki index
+  --     "<leader>wt", -- Create a new wiki tab
+  --   },
+  --   config = function()
+  --     vim.g.vimwiki_list = {
+  --       {
+  --         path = "/home/gaurav/Desktop/gst/vimwiki/", -- Your Vimwiki directory
+  --         syntax = "markdown", -- Use markdown syntax
+  --         ext = ".md", -- Set extension to .md (Markdown)
+  --       },
+  --     }
+  --     vim.g.vimwiki_ext2syntax = {} -- You can leave this empty for no custom mapping
+  --   end,
+  -- },
 
   -- Harpoon plugin configuration
   {
