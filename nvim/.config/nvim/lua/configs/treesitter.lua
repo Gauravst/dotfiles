@@ -13,6 +13,7 @@ local options = {
     "prisma",
     "python",
     "go",
+    "sql",
   },
 
   highlight = {

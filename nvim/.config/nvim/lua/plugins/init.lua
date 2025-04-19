@@ -22,6 +22,7 @@ return {
         markdown = { "prettierd" },
         python = { "prettierd" },
         go = { "goimports" },
+        sql = { "sql-formatter" },
       },
       formatters = {
         ["php-cs-fixer"] = {
@@ -33,7 +34,13 @@ return {
           },
           stdin = false,
         },
+
+        ["sql-formatter"] = {
+          command = "sql-formatter",
+          args = { "--config", '{"language": "postgresql"}' },
+        },
       },
+
       format_on_save = {
         timeout_ms = 600,
         lsp_fallback = true,

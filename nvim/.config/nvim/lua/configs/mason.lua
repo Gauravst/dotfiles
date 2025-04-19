@@ -22,6 +22,8 @@ local options = {
     "pyright",
     "golangci-lint",
     "goimports",
+    "sqlfmt",
+    "sqlls",
   },
 
   PATH = "skip",

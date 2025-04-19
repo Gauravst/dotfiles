@@ -2,6 +2,8 @@
 
 local map = vim.keymap.set
 
+vim.api.nvim_create_user_command("W", "w", {})
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 

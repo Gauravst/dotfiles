@@ -92,3 +92,6 @@ export PATH="$PATH:$HOME/Android/platform-tools"
 export PATH=/home/gaurav/.local/bin:$PATH
 
 GOPATH=$HOME/go  PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
+export PATH="/home/gaurav/.bun/bin:$PATH"

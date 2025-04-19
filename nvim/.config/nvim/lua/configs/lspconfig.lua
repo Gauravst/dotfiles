@@ -17,6 +17,7 @@ local servers = {
   "lua_ls",
   "pyright",
   "gopls",
+  "sqlls",
 }
 
 -- lsps with default config
@@ -35,6 +36,14 @@ end
 --   capabilities = capabilities,
 --   filetypes = { "html", "css", "javascript", "typescript", "jsx", "tsx" }, -- Remove PHP
 -- }
+--
+--
+lspconfig.sqlls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "sql" },
+}
 
 -- typescript
 lspconfig.ts_ls.setup {
