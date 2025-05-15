@@ -49,6 +49,32 @@ return {
   },
 
   {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          auto_trigger = false, -- Automatically trigger suggestions
+          keymap = {
+            accept = "<C-f>", -- Use Tab to accept suggestions
+            dismiss = "<C-e>", -- Use Ctrl+e to dismiss suggestions
+            -- next = "<C-]>", -- Navigate to next suggestion
+            -- prev = "<C-[>", -- Navigate to previous suggestion
+          },
+        },
+        panel = { enabled = true },
+      }
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
+  {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
     keys = {
@@ -61,15 +87,6 @@ return {
     ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html" },
     config = function()
       require("nvim-ts-autotag").setup()
-    end,
-  },
-
-  {
-    "github/copilot.vim",
-    config = function()
-      -- Optional: Configuration settings for Copilot
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
     end,
   },
 
