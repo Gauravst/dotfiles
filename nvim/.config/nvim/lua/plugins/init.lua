@@ -23,6 +23,8 @@ return {
         python = { "prettierd" },
         go = { "goimports" },
         sql = { "sql-formatter" },
+        yaml = { "prettierd" },
+        dockerfile = { "hadolint" },
       },
       formatters = {
         ["php-cs-fixer"] = {
@@ -48,32 +50,32 @@ return {
     },
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup {
-        suggestion = {
-          auto_trigger = false, -- Automatically trigger suggestions
-          keymap = {
-            accept = "<C-f>", -- Use Tab to accept suggestions
-            dismiss = "<C-e>", -- Use Ctrl+e to dismiss suggestions
-            -- next = "<C-]>", -- Navigate to next suggestion
-            -- prev = "<C-[>", -- Navigate to previous suggestion
-          },
-        },
-        panel = { enabled = true },
-      }
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup {
+  --       suggestion = {
+  --         auto_trigger = false, -- Automatically trigger suggestions
+  --         keymap = {
+  --           accept = "<C-f>", -- Use Tab to accept suggestions
+  --           dismiss = "<C-e>", -- Use Ctrl+e to dismiss suggestions
+  --           -- next = "<C-]>", -- Navigate to next suggestion
+  --           -- prev = "<C-[>", -- Navigate to previous suggestion
+  --         },
+  --       },
+  --       panel = { enabled = true },
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   dependencies = { "zbirenbaum/copilot.lua" },
+  --   config = function()
+  --     require("copilot_cmp").setup()
+  --   end,
+  -- },
   {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
@@ -433,7 +435,7 @@ return {
     end,
     keys = {
       {
-        "<C-a>",
+        "<leader>m",
         function()
           require("harpoon"):list():append()
         end,

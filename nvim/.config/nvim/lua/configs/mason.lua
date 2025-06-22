@@ -24,6 +24,7 @@ local options = {
     "goimports",
     "sqlfmt",
     "sqlls",
+    "hadolint",
   },
 
   PATH = "skip",

@@ -18,6 +18,8 @@ local servers = {
   "pyright",
   "gopls",
   "sqlls",
+  "docker_compose_language_service",
+  -- "yamlls",
 }
 
 -- lsps with default config
