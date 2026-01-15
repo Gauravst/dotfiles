@@ -3,11 +3,11 @@ local M = {}
 
 M.ui = {
   theme = "catppuccin",
-
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  theme_override = {
+    overrides = {
+      Tabufline = { bg = "none" },
+    },
+  },
 }
 
 return M

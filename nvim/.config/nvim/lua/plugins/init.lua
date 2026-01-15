@@ -14,8 +14,8 @@ return {
         css = { "prettierd" },
         cpp = { "clang_format" },
         c = { "clang_format" },
-        typescriptreact = { "prettierd" },
         javascriptreact = { "prettierd" },
+        typescriptreact = { "prettierd" },
         php = { "php-cs-fixer" },
         json = { "prettierd" },
         bash = { "shfmt" },
@@ -44,7 +44,7 @@ return {
       },
 
       format_on_save = {
-        timeout_ms = 600,
+        timeout_ms = 5000,
         lsp_fallback = true,
       },
     },
